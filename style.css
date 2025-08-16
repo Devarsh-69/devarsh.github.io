@@ -1,0 +1,510 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: black;
+  color:  lightblue;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  position: relative;
+  top: 0;
+  z-index: 2;
+  width: 100%; 
+  box-sizing: border-box;
+}
+
+#resume-btn {
+  margin-top: 60px;          /* pushes button down */
+  padding: 12px 25px;
+  font-size: 19px;
+  background-color: darkslateblue; /* blue button */
+  color: ghostwhite;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: transform 0.3s ease
+  
+}
+
+
+#resume-btn:hover {
+  background-color: lightskyblue;
+  transform: scale(0.99);      /* zoom out slightly */
+}
+
+
+
+.logo-container {
+
+  position: fixed; /* fix the logo in place */
+  top: 15px;       /* same top as navbar padding */
+  left: 20px;      /* same left as navbar padding */
+  background-color: darkblue; /* match navbar bg */
+  padding: 5px 10px;
+  border-radius: 10px;
+  z-index: 10;     /* above navbar */
+}
+
+.logo {
+  font-size: 25px;
+  font-weight: normal;
+  color: white;
+}
+
+.navbar .logo {
+  font-size: 25px;
+  font-weight: simple;
+  
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+
+}
+
+.navbar a {
+  font-size: 20px;
+  text-decoration: none;
+  color: white;
+  display: flex;
+}
+nav ul li a {
+  text-decoration: none;
+  color: white; /* text color */
+  position: relative;
+  padding-bottom: 5px;
+  transition: color 0.4s ease;
+}
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background-color: white; /* underline color */
+  transition: width 0.5s ease;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+nav ul li a:hover {
+  color: lightblue;
+}
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px;
+}
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start; /* or center */
+  height: 100vh; /* full screen height */
+  padding-left: 20px; /* optional spacing */
+  }
+
+
+.hero-text h1 {
+  font-size: 70px;
+  margin: 0;
+  margin-top: -80px;
+  line-height: 1.1;
+  font-size: 70px;
+  color: moccasin;
+  font-family: 'Poppins', sans-serif;
+}
+.hello-corner {
+  position: absolute;      /* position relative to nearest positioned ancestor */
+  top: 30px;
+  left: 40px;
+  font-size: 70px;
+  color: darkgoldenrod;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+   animation: fontFamilyCycle 1s infinite steps(1);
+}
+@keyframes fontFamilyCycle {
+  20%   { font-family: 'Arial', sans-serif; }
+  10%  { font-family: 'Courier New', monospace; }
+  50%  { font-family: 'Georgia', serif; }
+  25%  { font-family: 'Comic Sans MS', cursive, sans-serif; }
+  75% { font-family: 'Arial', sans-serif; }
+  100% { font-family: 'Futura', 'sans-serif'; }
+  120% { font-family: 'Helvetica Neue', 'sans-serif';}
+  70% { font-family: 'Arial Black', 'sans-serif';}
+
+}
+
+.hero-text h1 .top-text {
+  display: block;
+  font-size: 40px;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: white;
+}
+
+
+.hero-text h1 .bottom-text {
+  display: block;
+  font-size: 70px;
+  font-weight: 700;
+  color: lightblue;
+}
+
+.hero-text h3 {
+  font-size: 32px;          /* smaller than h1 */
+  color: lightyellow;              /* lighter color */
+  margin-top: 10px;         /* space above */
+  font-family: 'Poppins', sans-serif;
+}
+
+
+/* Make sure hero section has position relative so .hello-corner is positioned inside it */
+.hero {
+  position: relative;
+}
+
+.hero-text h2 {
+  font-size: 30px;
+  color: lightyellow;
+  padding: 2px;
+}
+
+.hero-photo img {
+  width: 400px;
+  border-radius: 50%;
+  border: 3px solid  lightblue;
+}
+
+.section {
+  
+  padding: 40px;
+  color: white;
+  border-bottom: 4px solid ;
+  text-align: left;
+}
+.large-skill {
+  font-size: 20px; /* bigger size */
+  font-weight: 600; /* optional */
+  color: white;   /* optional highlight color */
+}
+#skills ul li:nth-child(1),
+#skills ul li:nth-child(2),
+#skills ul li:nth-child(3),
+#skills ul li:nth-child(4),
+#skills ul li:nth-child(5)
+{
+  margin-bottom: 10px;  /* adds space below */
+}
+
+.section h2 {
+  color: lightblue;
+}
+
+#certificates {
+  padding: 20px;
+  background-color: darkgray;
+}
+
+.certificate-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 per row */
+  gap: 25px;
+  justify-items: center; /* center items in each grid cell */
+}
+
+.certificate-item {
+  text-align: center;
+}
+
+.certificate-item img {
+  width: 250px;  /* Medium size */
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease-in-out;
+}
+
+.certificate-item img:hover {
+  transform: scale(1.05);
+}
+
+.certificate-item p {
+  margin-top: 8px;
+  font-size: 14px;
+  color: #333;
+}
+
+/* Tablet: 2 per row */
+@media (max-width: 768px) {
+  .certificate-gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile: 1 per row */
+@media (max-width: 480px) {
+  .certificate-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .certificate-item img {
+    width: 200px; /* smaller on mobile */
+  }
+}
+
+
+#experience {
+  padding: 20px;
+  
+}
+
+#experience h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  border-bottom: 4px solid white; 
+}
+
+.experience-container {
+  display: flex;
+  flex-direction: column; /* stack items vertically */
+  gap: 20px; /* space between boxes */
+  
+}
+
+.experience-item {
+  background: black;
+  border: 2px solid lightcyan;
+  border-radius: 8px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 16px;
+  line-height: 1.6;
+  
+}
+.experience-item .label {
+  display: inline-block;
+  width: 150px; /* Adjust width for perfect alignment */
+  font-weight: bold;
+}
+
+.job-role {
+  font-size: 20px; /* medium size */
+  margin-bottom: 5px;
+  color: white;
+}
+
+.company,
+.job-type,
+.duration,
+.description {
+  font-size: 16px;
+  margin: 2px 0;
+}
+.company-name-label,
+.job-type-label,
+.location-type-label,
+.duration-label,
+.description-label {
+  color: lightyellow ;       /* color for labels */
+  font-weight: 600;
+  margin-right: 6px;
+}
+
+.company-name-value,
+.job-type-value,
+.location-type-value,
+.duration-value,
+.description-value {
+  color: lightblue;          /* different color for values */
+}
+
+.description-value {
+  display: inline-block;
+  color: lightblue;    /* value color */
+  max-width: 80%;          /* or as needed */
+  text-indent: -1.2em;    /* negative indent for hanging */
+  padding-left: 1.2em;     
+  vertical-align: top;
+}
+
+
+
+footer {
+  text-align: center;
+  padding: 15px;
+  font-family: 'Poppins', sans-serif;
+  color: white;
+}
+
+.social-icons {
+  margin-top: 30px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: flex-start; /* align everything to left */
+  margin-left: 0;
+ }
+
+.social-icons .label {
+  font-size: 30px;
+  font-weight: bold;
+  color: ghostwhite;      
+  margin: 0;  
+}
+
+.icons-container {
+  display: flex;
+  gap: 12px;     
+  
+}
+
+
+.icons-container a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  border-radius: 8px;    
+  transition:  transform 0.2s ease;
+}
+
+.social-icons a img {
+  width: 35px;  
+  height: 30px;
+  
+}
+
+
+#projects{
+  padding: 40px;
+  color:lightblue;
+  border-top: 4px solid white;
+  border-bottom: 4px solid white;
+
+}
+
+#projects {
+  padding: 20px;
+  background-color: darkgray;
+}
+
+.project-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 per row */
+  gap: 35px;
+}
+
+.project-item {
+  text-align: center;
+}
+
+.project-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease-in-out;
+}
+
+.project-item img:hover {
+  transform: scale(1.05);
+}
+
+.project-item p {
+  margin-top: 8px;
+  font-size: 14px;
+  color: #333;
+}
+
+/* Tablet: 2 per row */
+@media (max-width: 768px) {
+  .project-gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile: 1 per row */
+@media (max-width: 480px) {
+  .project-gallery {
+    grid-template-columns: 1fr;
+  }
+}
+
+.contact-section {
+  background-color: black; 
+  color: #fff;
+  padding: 60px 20px;
+  text-align: center;
+  padding: 40px;
+  color: ghostwhite;
+  border-bottom: 8px solid ;
+  border-top: 4px solid;
+  border-top-left-radius:150px; 
+  border-bottom-left-radius:150px;
+  border-top-right-radius:150px; 
+  border-bottom-right-radius:150px; 
+}
+
+.contact-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  color: ghostwhite;
+}
+
+.contact-section p {
+  font-size: 1.4rem;
+  margin-bottom: 25px;
+}
+
+.contact-info p {
+  margin: 8px 0;
+}
+.contact-info {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    color: lightsteelblue;
+    line-height: 1.8; /* spacing between lines */
+}
+
+.contact-info .label {
+    display: inline-block;
+    width: 100px; /* same width for all labels to align text */
+    font-weight: bold;
+}
+.label{
+  color: antiquewhite;
+}
+.contact-info .email {
+    border-bottom: 2px solid lightblue;
+    padding-bottom: 2px;
+    color: lightblue;
+    text-decoration: none; /* remove default underline */
+}
+
+.contact-info .email:hover {
+    color:darkcyan;
+}
+
+
+
+
+
+
+
+
+
+
